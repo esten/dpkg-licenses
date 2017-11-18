@@ -34,7 +34,7 @@ esac
 SCRIPTLIB=$(dirname $(readlink -f "$0"))/lib/
 test -d "$SCRIPTLIB"
 
-format='%s,%s,%s,,%s\n'
+format='%s;%s;%s;;%s\n'
 COLUMNS=2000 dpkg -l | grep '^.[iufhwt]' | while read pState package pVer pArch pDesc; do
   license=
   for method in "$SCRIPTLIB"/reader*; do
